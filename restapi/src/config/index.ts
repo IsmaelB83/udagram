@@ -15,6 +15,9 @@ const config = {
         AWS_PROFILE: process.env.AWS_PROFILE,
         AWS_REGION: process.env.AWS_REGION,
         AWS_MEDIA_BUCKET: process.env.AWS_MEDIA_BUCKET,
+    },
+    JWT: {
+        SECRET: process.env.JWT_SECRET
     }
 }
 
