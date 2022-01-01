@@ -16,38 +16,30 @@ const JWT_CONFIG = config.JWT;
 const router: Router = Router();
 
 /**
- * 
- * @param req 
- * @param res 
- * @param next 
- * @returns 
+ * Authentication middleware to protect endpoints
+ * @param req Request
+ * @param res Response
+ * @param next Next middleware
+ * @returns Next
  */
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
-    console.warn("auth.router not yet implemented, you'll cover this in lesson 5")
-    return next();
-    // if (!req.headers || !req.headers.authorization){
-    //     return res.status(401).send({ message: 'No authorization headers.' });
-    // }
-    
-    
-    // const token_bearer = req.headers.authorization.split(' ');
-    // if(token_bearer.length != 2){
-    //     return res.status(401).send({ message: 'Malformed token.' });
-    // }
-    
-    // const token = token_bearer[1];
-    
-    // return jwt.verify(token, "hello", (err, decoded) => {
-    //   if (err) {
-    //     return res.status(500).send({ auth: false, message: 'Failed to authenticate.' });
-    //   }
-    //   return next();
-    // });
+    // Auth header not present error
+    if (!req.headers || !req.headers.authorization) return res.status(401).send({ message: 'No authorization headers.' });
+    // Token bearer   
+    const token_bearer = req.headers.authorization.split(' ');
+    if(token_bearer.length != 2) return res.status(401).send({ message: 'Malformed token.' });   
+    const token = token_bearer[1];
+    // Verify JWT    
+    return jwt.verify(token, JWT_CONFIG.SECRET, (err, decoded) => {
+      if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate.' });
+      return next();
+    });
 }
 
-router.get('/verification', 
-requireAuth, 
-async (req: Request, res: Response) => {
+/**
+ * Endpoint to validate jwt
+ */
+router.get('/verification', requireAuth,  async (req: Request, res: Response) => {
     return res.status(200).send({ auth: true, message: 'Authenticated.' });
 });
 
@@ -98,6 +90,9 @@ router.post('/', async (req: Request, res: Response) => {
     res.status(201).send({token: jwtoken, user: savedUser.short()});
 });
 
+/**
+ * Help endpoint
+ */
 router.get('/', async (req: Request, res: Response) => {
     res.send('auth')
 });
