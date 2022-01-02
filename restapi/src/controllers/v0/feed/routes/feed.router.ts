@@ -93,5 +93,14 @@ router.post('/', requireAuth, async (req: Request, res: Response) => {
     res.status(201).send({url: url});
 });
 
+/**
+ * Get a signed url to retrieve an existing item in the bucket
+ */
+ router.get('/get-signed-url/:fileName', requireAuth, async (req: Request, res: Response) => {
+    let { fileName } = req.params;
+    const url = AWS.getGetSignedUrl(fileName);
+    res.status(201).send({url: url});
+});
+
 // Export
 export const FeedRouter: Router = router;
