@@ -5,13 +5,17 @@ import bodyParser from 'body-parser';
 // Own Imports
 import { IndexRouter } from './controllers/v0/index.router';
 import { V0MODELS } from './controllers/v0/model.index';
+import config from './config';
+
+// Constants
+const ENV = config.ENV;
 
 // Initialize sequelize
 sequelizeConfig();
 
 // Create express
 const app = express();
-const port = process.env.PORT || 8080;
+const port = ENV.PORT || 8080;
 
 // Middlewares
 app.use(bodyParser.json());
@@ -38,6 +42,8 @@ async function sequelizeConfig (): Promise<void> {
     console.log('Starting sequelize...')
     await sequelize.authenticate();
     await sequelize.addModels(V0MODELS);
-    await sequelize.sync({ force: true, logging: console.log });
+    if (ENV.ENV === 'DEV') {
+        await sequelize.sync({ force: true, logging: console.log });
+    }
     console.log('Sequelize configuration... OK');
 }

@@ -4,6 +4,10 @@ dotenv.config();
 
 // Constants
 const config = {
+    ENV: {
+        ENV: process.env.ENV,
+        PORT: process.env.PORT
+    },
     POSTGRES: {
         USERNAME: process.env.POSTGRES_USERNAME,
         PASSWORD: process.env.POSTGRES_PASSWORD,
