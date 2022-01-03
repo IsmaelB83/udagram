@@ -16,7 +16,7 @@ const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const Jimp = require("jimp");
 // Constants
-const FILES_FOLDER = path_1.default.join(__dirname, "../../public/tmp/");
+const FILES_FOLDER = path_1.default.join(__dirname, "../tmp/");
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
 // returns the absolute path to the local image

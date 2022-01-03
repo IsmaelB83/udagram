@@ -37,7 +37,7 @@ function requireAuth(req, res, next) {
     const token = token_bearer[1];
     // Verify JWT agains auth server
     try {
-        axios_1.default.get(`${config_1.default.BACKEND_SERVER}api/v0/users/auth/verification`, {
+        axios_1.default.get(`${config_1.default.AUTH_SERVER}/api/v0/users/auth/verification`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
             .then(result => {
@@ -47,10 +47,12 @@ function requireAuth(req, res, next) {
                 return res.status(401).send({ message: 'Failed to authenticate.' });
         })
             .catch(error => {
+            console.log(error);
             return res.status(401).send({ message: 'Failed to authenticate.' });
         });
     }
     catch (error) {
+        console.log(error);
         return res.status(401).send({ message: 'Failed to authenticate.' });
     }
 }

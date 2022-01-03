@@ -9,7 +9,7 @@ dotenv_1.default.config();
 // Constants
 const config = {
     PORT: process.env.PORT,
-    BACKEND_SERVER: process.env.BACKEND_SERVER
+    AUTH_SERVER: process.env.AUTH_SERVER
 };
 // Export
 exports.default = config;
