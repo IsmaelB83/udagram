@@ -5,6 +5,11 @@ This microservice is in charge of creating thumbnails. For that, it provides the
 3) Send it to the caller and
 4) delete it from local files.
 
+Test endpoint here:
+```bash
+{{host}}/api/v0/filteredimage?image_url=https://herofreaks.com/wp-content/uploads/2020/08/Tainted-Grail.jpg
+```
+
 The endpoint is secured trough JWT. Nonetheless, as the JWT has not been issued originally by this microservice, it can't validate it's signature. For that, imageprocessing service delegates the JWT validation to the restapi (which originally issued the JWT at login time). For that, this microservice calls the endpoint:
 ```bash
 http://restapi.bernaldev.com/api/v0/users/auth/verification
