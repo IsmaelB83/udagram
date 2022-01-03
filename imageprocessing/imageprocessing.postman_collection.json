@@ -64,7 +64,7 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:8082",
+			"value": "http://imageprocessing-ibernal-dev-dev.us-east-1.elasticbeanstalk.com",
 			"type": "string"
 		},
 		{

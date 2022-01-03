@@ -523,12 +523,6 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:8080",
-			"type": "string",
-			"disabled": true
-		},
-		{
-			"key": "host",
 			"value": "http://udagram-ibernal-dev-dev.us-east-1.elasticbeanstalk.com",
 			"type": "string"
 		}
