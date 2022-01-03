@@ -1,7 +1,6 @@
-// Node Imports
 import dotenv from "dotenv";
-dotenv.config();
 
+dotenv.config();
 // Constants
 const config = {
     ENV: {
@@ -23,7 +22,6 @@ const config = {
     JWT: {
         SECRET: process.env.JWT_SECRET
     }
-}
-
+};
 // Export
 export default config;

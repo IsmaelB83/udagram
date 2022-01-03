@@ -5,7 +5,7 @@ import * as jwt from 'jsonwebtoken';
 import { NextFunction } from 'connect';
 import * as EmailValidator from 'email-validator';
 // Own imports
-import config from '../../../../config';
+import config from "../../../../config";
 import { User } from '../models/User';
 
 // Constants
@@ -29,11 +29,15 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
     const token_bearer = req.headers.authorization.split(' ');
     if(token_bearer.length != 2) return res.status(401).send({ message: 'Malformed token.' });   
     const token = token_bearer[1];
-    // Verify JWT    
-    return jwt.verify(token, JWT_CONFIG.SECRET, (err, decoded) => {
-      if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate.' });
-      return next();
-    });
+    // Verify JWT
+    try {
+        return jwt.verify(token, JWT_CONFIG.SECRET, (err, decoded) => {
+            if (err) return res.status(401).send({ auth: false, message: 'Failed to authenticate.' });
+            return next();
+          });             
+    } catch (error) {
+        return res.status(401).send({ auth: false, message: 'Failed to authenticate.' });
+    }    
 }
 
 /**

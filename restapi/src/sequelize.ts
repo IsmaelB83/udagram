@@ -1,7 +1,7 @@
 // Node imports
 import { Sequelize } from 'sequelize-typescript';
 // Own imports
-import config from './config';
+import config from "./config";
 
 // Constants
 const POSTGRES_CONFIG = config.POSTGRES;
