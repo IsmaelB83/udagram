@@ -1,10 +1,10 @@
 {
-  "name": "udacity-c2-restapi",
+  "name": "udagram-restapi",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.ts",
     "tsc": "tsc",
     "dev": "ts-node-dev ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
@@ -12,8 +12,11 @@
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Gabriel Ruttner",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsmaelB83/udagram.git"
+  },
+  "author": "Ismael Bernal",
   "license": "ISC",
   "dependencies": {
     "@types/bcrypt": "^3.0.0",

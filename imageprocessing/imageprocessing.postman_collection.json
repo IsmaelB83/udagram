@@ -21,7 +21,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/v0/filteredimage?image_url=https://cdnuploads.aa.com.tr/uploads/Contents/2019/01/04/thumbs_b_c_a1bf2d72ec43ed8c1b0d4437bd542245.jpg?v=230946",
+					"raw": "{{host}}/api/v0/filteredimage?image_url=https://herofreaks.com/wp-content/uploads/2020/08/Tainted-Grail.jpg",
 					"host": [
 						"{{host}}"
 					],
@@ -33,7 +33,7 @@
 					"query": [
 						{
 							"key": "image_url",
-							"value": "https://cdnuploads.aa.com.tr/uploads/Contents/2019/01/04/thumbs_b_c_a1bf2d72ec43ed8c1b0d4437bd542245.jpg?v=230946"
+							"value": "https://herofreaks.com/wp-content/uploads/2020/08/Tainted-Grail.jpg"
 						}
 					]
 				}
@@ -64,7 +64,7 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:8082",
+			"value": "http://https://imageproc-ibernal-dev-dev.us-east-1.elasticbeanstalk.com/",
 			"type": "string"
 		},
 		{
