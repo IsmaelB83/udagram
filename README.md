@@ -41,21 +41,21 @@ To download the repository
 ./downloads/git clone https://github.com/IsmaelB83/udagram.git
 ```
 
-1) Then enter in directory restapi, and follow instructions to start the REST API: [BACKEND REST-API](restapi/README.md)
+1) Then enter in directory restapi, and follow instructions to start the REST API: [REST API](restapi/README.md)
 ```bash
 ./downloads/udagram/cd restapi
-./downloads/udagram/npm install
-./downloads/udagram/npm run dev
+./downloads/udagram/restapi/npm install
+./downloads/udagram/restapi/npm run dev
 ```
 2) With backend-api up and running, follow instructions to start the IMAGE PROCESSING: [IMAGE PROCESSING MICROSERVICE](imageprocessing/README.md)
 ```bash
 ./downloads/udagram/cd imageprocessing
-./downloads/udagram/npm install
-./downloads/udagram/npm run dev
+./downloads/udagram/imageprocessing/npm install
+./downloads/udagram/imageprocessing/npm run dev
 ```
-3) With all that you can start the FRONT-END: [FRONT-END](frontend/README.md)
+3) With all that you can start the FRONT-END: [FRONTEND](frontend/README.md)
 ```bash
 ./downloads/udagram/cd frontend
-./downloads/udagram/npm install
-./downloads/udagram/npm start
+./downloads/udagram/frontend/npm install
+./downloads/udagram/frontend/npm start
 ```

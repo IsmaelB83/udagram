@@ -1,7 +1,7 @@
 // Node Imports
 import AWS = require('aws-sdk');
 // Own Imports
-import config from './config/';
+import config from "./config";
 
 // Constants
 const AWS_CONFIG = config.AWS;
