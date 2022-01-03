@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 // Own Imports
 import { IndexRouter } from './controllers/v0/index.router';
 import { V0MODELS } from './controllers/v0/model.index';
-import config from './config';
+import config from "./config";
 
 // Constants
 const ENV = config.ENV;

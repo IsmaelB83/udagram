@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "131a65f7-e349-48d2-b1df-c821beb81b75",
+		"name": "imageprocessing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/v0/filteredimage?image_url={{url}}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzbWFlbGJlcm5hbGFsYmlsbG9zQGhvdG1haWwuY29tIiwiaWF0IjoxNjQxMjQ1OTUzfQ.8DU0p6Ds5TFt6K4oRCDG0OCf0cuRHGPzVjR4dnqiW8o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v0/filteredimage?image_url=https://cdnuploads.aa.com.tr/uploads/Contents/2019/01/04/thumbs_b_c_a1bf2d72ec43ed8c1b0d4437bd542245.jpg?v=230946",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://cdnuploads.aa.com.tr/uploads/Contents/2019/01/04/thumbs_b_c_a1bf2d72ec43ed8c1b0d4437bd542245.jpg?v=230946"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8082",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
