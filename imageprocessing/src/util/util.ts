@@ -4,7 +4,7 @@ import path from "path";
 import Jimp = require("jimp");
 
 // Constants
-const FILES_FOLDER = path.join(__dirname, "../../public/tmp/");
+const FILES_FOLDER = path.join(__dirname, "../tmp/");
 
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally

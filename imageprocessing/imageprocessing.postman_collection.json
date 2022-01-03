@@ -13,7 +13,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzbWFlbGJlcm5hbGFsYmlsbG9zQGhvdG1haWwuY29tIiwiaWF0IjoxNjQxMjQ1OTUzfQ.8DU0p6Ds5TFt6K4oRCDG0OCf0cuRHGPzVjR4dnqiW8o",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzbWFlbGJlcm5hbGFsYmlsbG9zQGhvdG1haWwuY29tIiwiaWF0IjoxNjQxMjUxMjAyfQ.lwtQOZe7AZAu7OPysC6rt0ecfmU_lpcMqaFFho2Q4dw",
 							"type": "string"
 						}
 					]
@@ -64,13 +64,8 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://https://imageproc-ibernal-dev-dev.us-east-1.elasticbeanstalk.com/",
+			"value": "http://imageprocessing.bernaldev.com",
 			"type": "string"
-		},
-		{
-			"value": "",
-			"type": "string",
-			"disabled": true
 		}
 	]
 }
