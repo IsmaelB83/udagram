@@ -7,6 +7,30 @@ import { IndexRouter } from './controllers/v0/index.router';
 import { V0MODELS } from './controllers/v0/model.index';
 import config from "./config";
 
+import * as Sentry from '@sentry/node';
+import * as Tracing from '@sentry/tracing';
+
+// Sentry
+Sentry.init({
+    dsn: "https://df356a4e98a14f43b018ac6a1f4672e4@o1107973.ingest.sentry.io/6135308",  
+    tracesSampleRate: 1.0,
+});
+
+const transaction = Sentry.startTransaction({
+    op: "test",
+    name: "My First Test Transaction",
+});
+
+setTimeout(() => {
+    try {        
+        console.log("Test sentry")
+    } catch (e) {
+        Sentry.captureException(e);
+    } finally {
+        transaction.finish();
+    }
+}, 99);
+
 // Constants
 const ENV = config.ENV;
 

@@ -19,6 +19,8 @@
   "author": "Ismael Bernal",
   "license": "ISC",
   "dependencies": {
+    "@sentry/node": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
     "@types/bcrypt": "^3.0.0",
     "@types/jsonwebtoken": "^8.3.2",
     "aws-sdk": "^2.492.0",
