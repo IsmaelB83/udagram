@@ -105,3 +105,14 @@ dist
 
 # Env file
 .env
+
+# Other
+www/
+tmp/
+temp/
+logfile
+venv/
+
+# AWS
+config.yml
+options.config
